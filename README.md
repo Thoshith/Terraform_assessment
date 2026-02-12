@@ -145,11 +145,11 @@ Remote Backend
 ### Initialize
 terraform init
 
-### Validate syntax
-terraform validate
-
 ### Format code
 terraform fmt -recursive
+
+### Validate syntax
+terraform validate
 
 ### Plan for dev
 terraform plan -var-file="dev.tfvars"
