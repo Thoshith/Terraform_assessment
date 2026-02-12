@@ -1,4 +1,4 @@
-# Get latest Amazon Linux 2023 AMI
+# AL2023 ami
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -14,7 +14,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-# Security Group for EC2
+# Security Group
 resource "aws_security_group" "ec2_sg" {
   name        = "${var.project_name}-${var.environment}-ec2-sg"
   description = "Security group for EC2 instance"
