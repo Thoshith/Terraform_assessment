@@ -1,5 +1,5 @@
 # About
-Production ready AWS infrastructure built with Terraform, featuring modular design, multi-environment support (dev/prod), remote state with S3 + DynamoDB locking, and secure VPC architecture with private EC2 and logging
+This is a production ready AWS infrastructure built with Terraform, featuring modular design, multi-environment support (dev/prod), remote state with S3 + DynamoDB locking, and secure VPC architecture with private EC2 and logging
 
 # Project_Structure
 ```
@@ -31,6 +31,71 @@ terraform-aws-assessment/
 └── docs/
     ├── part3-scenarios.md
     └── part4-production.md
+```
+
+# Architecture Diagram
+
+                               +----------------------+
+                               |       Internet       |
+                               +----------+-----------+
+                                          |
+                                          |
+                                 +--------v--------+
+                                 |  Internet GW    |
+                                 +--------+--------+
+                                          |
+                 -------------------------------------------------
+                 |                                               |
+        +--------v--------+                             +-------v--------+
+        |  Public Subnet  |                             |  Public Subnet |
+        |      (AZ-1)     |                             |     (AZ-2)     |
+        +--------+--------+                             +-------+--------+
+                 |                                               |
+                 |        Public Route Table (IGW Route)         |
+                 |                                               |
+        -------------------------------------------------------------------
+                 |                                               |
+        +--------v--------+                             +-------v--------+
+        | Private Subnet  |                             | Private Subnet |
+        |      (AZ-1)     |                             |     (AZ-2)     |
+        +--------+--------+                             +-------+--------+
+                 |
+                 |
+          +------v-------+
+          |  EC2 Instance|
+          |  (Private)   |
+          |  IAM Role    |
+          |  User Data   |
+          +------+-------+
+                 |
+                 |
+          +------v-------+
+          |   S3 Bucket  |
+          | Application   |
+          |     Logs      |
+          | (Encrypted &  |
+          |  Versioned)   |
+          +--------------+
+
+# Remote Backend
+
+```
++---------------------------+
+|   Terraform (CLI/User)    |
++-------------+-------------+
+              |
+              |
+      +-------v--------+
+      |   S3 Bucket    |
+      | Terraform State|
+      |  (Versioned)   |
+      +-------+--------+
+              |
+              |
+      +-------v--------+
+      | DynamoDB Table |
+      |  State Locking |
+      +----------------+
 ```
 
 
