@@ -167,3 +167,47 @@ terraform apply -var-file="prod.tfvars"
 
 ### Destroy dev
 terraform destroy -var-file="dev.tfvars"
+
+## Reference from Terraform Docs
+
+VPC Module
+
+1: VPC — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+
+2: Subnet — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
+
+3: Internet Gateway — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
+
+4: Route Table — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
+
+5: Route Table Association — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
+
+Compute Module
+
+6: EC2 Instance — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+7: Security Group — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
+
+Storage Module
+
+8: S3 Bucket — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+
+9: S3 Bucket Versioning — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning
+
+10: S3 Bucket Encryption — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration
+
+11: S3 Public Access Block — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block
+
+IAM Module
+
+12: IAM Role — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role
+
+13: IAM Policy — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
+
+14: IAM Role Policy Attachment — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment
+
+15: IAM Instance Profile — https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile
+
+Backend
+
+16: S3 Backend Config — https://developer.hashicorp.com/terraform/language/settings/backends/s3
