@@ -1,4 +1,4 @@
-# S3 Bucket for Application Logs
+# Application logs (S3 bucket)
 resource "aws_s3_bucket" "logs" {
   bucket = var.bucket_name
 
@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "logs" {
   }
 }
 
-# S3 Bucket Versioning
+# Versioning
 resource "aws_s3_bucket_versioning" "logs" {
   bucket = aws_s3_bucket.logs.id
 
@@ -23,7 +23,7 @@ resource "aws_s3_bucket_versioning" "logs" {
   }
 }
 
-# S3 Bucket Encryption
+# Encryption
 resource "aws_s3_bucket_server_side_encryption_configuration" "logs" {
   bucket = aws_s3_bucket.logs.id
 
