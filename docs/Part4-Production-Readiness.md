@@ -11,4 +11,4 @@ Answer: Never hardcode secrets in Terraform code. Use AWS Secrets Manager or Has
 Question: Explain version pinning and upgrade strategy? 
 
 
-Answer: Pin Terraform version using required_version = "~> 1.14.0" and provider versions using required_providers block with version constraints. Use pessimistic constraints (~>) to allow patch updates while preventing breaking changes. Test upgrades in development first, review changelogs, use .terraform.lock.hcl for dependency locking, and follow staged rollout (Dev → Staging → Production) with thorough validation at each stage.
+Answer: Version pinning means locking Terraform and provider versions in required_providers block to ensure consistent behavior across environments and team members. Without pinning, a newer provider version could introduce breaking changes unexpectedly. The upgrade strategy is to bump versions in dev first, run terraform plan to catch issues, test, and then promote to prod. The .terraform.lock.hcl file should be committed to Git so everyone uses the same versions.
