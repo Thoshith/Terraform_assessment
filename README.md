@@ -1,7 +1,7 @@
 # About
 This is a production ready AWS infrastructure built with Terraform, featuring modular design, multi-environment support (dev/prod), remote state with S3 + DynamoDB locking, and secure VPC architecture with private EC2 and logging
 
-# Project_Structure
+# Project Structure
 ```
 terraform-aws-assessment/
 ├── README.md
@@ -231,7 +231,7 @@ terraform apply -var-file="prod.tfvars"
 ### Destroy dev
 terraform destroy -var-file="dev.tfvars"
 
-## Reference from Terraform Docs
+## References from Terraform Docs
 
 VPC Module
 
