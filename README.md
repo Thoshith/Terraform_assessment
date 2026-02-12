@@ -1,5 +1,5 @@
 # About
-This is a production ready AWS infrastructure built with Terraform, featuring modular design, multi-environment support (dev/prod), remote state with S3 + DynamoDB locking, and secure VPC architecture with private EC2 and logging
+This is a production ready AWS infrastructure built with Terraform, featuring modular design, multi-environment support (dev/prod), remote state with S3 + DynamoDB locking and secure VPC architecture with private EC2 and logging
 
 # Project Structure
 ```
@@ -201,9 +201,9 @@ Remote Backend
 
 5: No VPC endpoints configured — less complexity but S3 traffic routes over the internet path
 
-6: No multi-region setup — simpler architecture
+6: No multi-region setup — simple architecture
 
-7: smaller instance used in dev — free tier eligible but limited compute power for heavy workloads
+7: smaller instance used in dev
 
 ## Quick Reference
 
