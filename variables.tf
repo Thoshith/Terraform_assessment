@@ -1,5 +1,5 @@
 variable "aws_region" {
-  description = "AWS region for resources"
+  description = "AWS region"
   type        = string
   default     = "us-east-1"
 }
@@ -22,7 +22,7 @@ variable "vpc_cidr" {
 }
 
 variable "availability_zones" {
-  description = "List of availability zones"
+  description = "list of availability zones"
   type        = list(string)
   default     = ["us-east-1a", "us-east-1b"]
 }
@@ -46,7 +46,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  description = "EC2 key pair name (optional)"
+  description = "EC2 key pair name"
   type        = string
   default     = null
 }
