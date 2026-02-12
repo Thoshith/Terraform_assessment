@@ -118,7 +118,7 @@ Remote Backend
 
 6: A single EC2 instance is sufficient for this assessment
 
-7: Application logs are written directly to S3 (no CloudWatch integration)
+7: Application logs are written directly to S3
 
 8: SSH access to EC2 is not configured (private subnet, no bastion)
 
@@ -136,11 +136,9 @@ Remote Backend
 
 5: No VPC endpoints configured — less complexity but S3 traffic routes over the internet path
 
-6: force_destroy enabled on dev S3 bucket — allows easy cleanup but risks accidental data loss
+6: No multi-region setup — simpler architecture
 
-7: No multi-region setup — simpler architecture but no cross-region disaster recovery
-
-8: t2.micro used in dev — free tier eligible but limited compute power for heavy workloads
+7: smaller instance used in dev — free tier eligible but limited compute power for heavy workloads
 
 ## Quick Reference
 
