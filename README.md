@@ -136,6 +136,8 @@ Storage (Storage Module)
     Versioning enabled to prevent accidental data loss
     Server-side encryption (SSE-S3) enabled by default
     Public access blocked at bucket level
+	Note: By creating s3 gateway endpoint we can enable private connectivity between EC2 instance and S3 bucket for log transmission without traversing the public internet . Once s3 gateway endpoint is created please ensure your private subnet route tables are associated with the gateway endpoint. After deployment verify connectivity from your EC2 instance "$aws s3 ls s3://<bucket-name>/ --region <AWS Region>"
+
 
 IAM (IAM Module)
 
